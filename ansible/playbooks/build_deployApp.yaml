@@ -1,0 +1,4 @@
+- hosts: webappservers
+  gather_facts: True
+  roles:
+    - { role: deployApp }
