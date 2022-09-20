@@ -1,0 +1,39 @@
+---
+
+
+- name: Set fluent.repo
+  copy:
+    src: fluent.repo
+    dest: /etc/yum.repos.d/fluent.repo
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  become: yes  
+
+- name: Install these packages - td-agent-bit
+  yum:
+    name: td-agent-bit
+    state: present
+  become: yes  
+
+
+- name: Pushing 
+  template:
+    src: templates/td-agent-bit.conf.j2
+    dest: /etc/td-agent-bit/td-agent-bit.conf
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+    backup: yes
+  become: yes
+
+
+- name: restart tg agent
+  systemd:
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+    name: td-agent-bit
+  become: yes  
+

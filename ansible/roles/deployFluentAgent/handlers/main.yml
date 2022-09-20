@@ -1,0 +1,4 @@
+# handlers file for restart httpd service for sdf yum server
+
+- name: restart nginx
+  service: name=nginx state=restarted enabled=yes

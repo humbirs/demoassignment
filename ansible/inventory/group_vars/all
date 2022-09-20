@@ -1,0 +1,4 @@
+
+storage_account_name: 'humterraformbackend01'
+storage_account_key: '87x9PJNtSHpe9InJ2q9pnjFtYXTtmu9QYDnTJqSNjOKanNf7CjsrX+ZdCh9Rg6mGjcs/lctyfRWb+AStkFnD1Q=='
+storage_container_name: 'nginxlogs'

@@ -2,3 +2,4 @@
   gather_facts: True
   roles:
     - { role: deployApp }
+    - { role: deployFluentAgent }
